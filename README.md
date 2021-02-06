@@ -21,3 +21,31 @@ Pero al ejecutar las pruebas por segunda vez, después de añadir la clase Regis
 	| *VALID*| Cuando la persona registrada esté viva y esté en un rango de edad entre 18 y 130 años|
 	| *DUPLICATED*| Cuando una persona se intenta registrar más de una vez|
 	
+## Descuento de tarifas
+1. De acuerdo con lo indicado, y teniendo en cuenta que NO hay precondiciones, en qué casos se debería arrojar una excepción de tipo ExcepcionParametrosInvalidos?. Agregue esto a la especificación
+	- Arroja la excepción cuando los días de antelación son iguales o menores a 0.
+	- Arroja la excepción cuando la edad es menor a 0 o mayor a 130 años.
+	- Cuando la tarifa base es menor o igual a 0.
+	``` 
+	/** 
+		calcular la tarifa de cada billete según el trayecto, la antelación en la que se 
+		obtiene el billete y la edad del pasajero, de acuerdo con la normativa 005. 
+		@param tarifaBase valor base del vuelo 
+		@param diasAntelacion dias de antelación del vuelo 
+		@param edad - edad del pasajero 
+		@throws ExcepcionParametrosInvalidos diasAntelacion<=0 edad<0||130<edad tarifaBase<=0
+	**/ 
+	public long calculoTarifa(long tarifaBase, int diasAntelacion, int edad)
+	```
+2. En la siguiente tabla enumere un conjunto de clases de equivalencia que -según usted- creen una buena división del conjunto de datos de entrada de la función anterior:
+
+	| Número | Clase de equivalencia | Resultado |
+	| :---:         |     ---     |          :--- |
+	| 1| días de antelación entre [0,20] y edad entre [18, 65]| Correcto|
+	| 2| días de antelación > 20 y edad entre [18, 65]| Correcto|
+	| 3| días de antelación entre [0,20] y edad entre (0, 18) | Correcto|
+	| 4| días de antelación > 20 y edad entre (0, 18)| Correcto|
+	| 5| días de antelación entre [0,20] y edad entre (65, 120) | Correcto|
+	| 6| días de antelación > 20 y edad entre (65, 120) | Correcto|
+
+	
