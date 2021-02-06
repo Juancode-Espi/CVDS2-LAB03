@@ -12,11 +12,16 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
   </properties>
   <dependencies>
-	  <dependency>
+	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<version>4.13.1</version>
 		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>edu.eci.cvds</groupId>
+		<artifactId>aerodescuentos</artifactId>
+		<version>1.0.0</version>
 	</dependency>
   </dependencies>
 </project>
